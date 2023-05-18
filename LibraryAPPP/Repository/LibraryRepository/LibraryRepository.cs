@@ -42,7 +42,7 @@ namespace LibraryAPPP.Repository.LibraryRepository
                 resultList.Add(bookViewModel);
             }
 
-            return resultList;
+            return resultList.Where(x => x.Quantity > 0).ToList();
         }
 
         public List<BookViewModel> GetAllBooksToBuy(int clientId)
@@ -65,7 +65,7 @@ namespace LibraryAPPP.Repository.LibraryRepository
                 };
                 resultList.Add(bookViewModel);
             }
-            return resultList.Where(x => x.Price != null).ToList();
+            return resultList.Where(x => x.Price != null && x.Quantity > 0).ToList();
         }
 
         public Book GetBookById(int bookId)

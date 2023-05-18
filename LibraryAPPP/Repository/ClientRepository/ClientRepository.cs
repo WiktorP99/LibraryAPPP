@@ -2,6 +2,7 @@
 using LibraryAPPP.DB.DTO;
 using LibraryAPPP.Enums;
 using LibraryAPPP.Models;
+using LibraryAPPP.Models.ViewModels;
 using Microsoft.Extensions.Configuration;
 
 namespace LibraryAPPP.Repository.UserRepository
@@ -15,9 +16,32 @@ namespace LibraryAPPP.Repository.UserRepository
         {
             _context = context;
         }
-        public Client GetClientById(int ClientId)
+        public ClientDebtInfoViewModel GetClientById(int clientId)
         {
-            return _context.Clients.FirstOrDefault(x => x.ClientId == ClientId);
+            var debtDetails = (from client in _context.Clients
+                where client.ClientId == clientId
+                from rentHeader in client.RentHeaders.DefaultIfEmpty()
+                from rentDetail in rentHeader.RentDetails.DefaultIfEmpty()
+                select new ClientDebtDetailModel
+                {
+                    ReturnDate = rentHeader.ReturnDate,
+                    PenaltyFee = rentDetail.PenaltyFee,
+                    DelayDays = rentDetail.DelayDays,
+                    BookTitle = rentDetail.Book.Title,
+                    AuthorFirstName = rentDetail.Book.Author.AuthorFirstName,
+                    AuthorLastName = rentDetail.Book.Author.AuthorLastName
+                }).ToList();
+
+            var clientInfo = (from client in _context.Clients
+                where client.ClientId == clientId
+                select new ClientDebtInfoViewModel
+                {
+                    Client = client,
+                    DebtDetails = debtDetails
+                }).FirstOrDefault();
+
+
+            return clientInfo;
         }
 
         public bool IsBlocked(int clientId)

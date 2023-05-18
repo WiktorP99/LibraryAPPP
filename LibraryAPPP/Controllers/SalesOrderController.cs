@@ -32,8 +32,8 @@ namespace LibraryAPPP.Controllers
         }
 
         [HttpGet]
-        [Route("[Controller]/OrderBook/{bookId}/{clientId}")]
-        public IActionResult OrderBook(int bookId, int clientId)
+        [Route("[Controller]/OrderBook/{clientId}/{bookId}")]
+        public IActionResult OrderBook(int clientId, int bookId)
         {
             _salesOrderRepository.OrderBook(bookId, clientId);
             return View("Index", _libraryRepository.GetAllBooksToBuy(clientId));

@@ -1,4 +1,4 @@
-﻿@model LibraryAPPP.DB.DTO.Client
+﻿@model LibraryAPPP.Models.ViewModels.ClientDebtInfoViewModel
 
 <div class="d-flex justify-content-between align-items-center">
     <button class="btn btn-primary mb-3" onclick="goBack()">Powrót</button>
@@ -11,25 +11,45 @@
 
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">@Model.ClientFirstName @Model.ClientLastName</h5>
+        <h5 class="card-title">@Model.Client.ClientFirstName @Model.Client.ClientLastName</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Identyfikator klienta:</strong> @Model.ClientId</li>
-            <li class="list-group-item"><strong>Email:</strong> @Model.Email</li>
-            <li class="list-group-item"><strong>Adres:</strong> @Model.Address</li>
-            <li class="list-group-item"><strong>Miasto:</strong> @Model.City</li>
-            <li class="list-group-item"><strong>Województwo:</strong> @Model.Province</li>
-            <li class="list-group-item"><strong>Kod pocztowy:</strong> @Model.PostalCode</li>
+            <li class="list-group-item"><strong>Identyfikator klienta:</strong> @Model.Client.ClientId</li>
+            <li class="list-group-item"><strong>Email:</strong> @Model.Client.Email</li>
+            <li class="list-group-item"><strong>Adres:</strong> @Model.Client.Address</li>
+            <li class="list-group-item"><strong>Miasto:</strong> @Model.Client.City</li>
+            <li class="list-group-item"><strong>Województwo:</strong> @Model.Client.Province</li>
+            <li class="list-group-item"><strong>Kod pocztowy:</strong> @Model.Client.PostalCode</li>
+            
         </ul>
     </div>
 </div>
+@if (@Model.Client.Blocked)
+{
+    <div>
+        <h3 class="m-0">Zadłużenia i wypożyczenia</h3>
+    </div>
+    <br/>
+    @foreach (var debt in @Model.DebtDetails)
+    {
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Autor:</strong> @debt.AuthorFirstName @debt.AuthorLastName</li>
+                    <li class="list-group-item"><strong>Tytuł:</strong> @debt.BookTitle</li>
+                    <li class="list-group-item"><strong>Data zwrotu:</strong> @debt.ReturnDate</li>
+                    <li class="list-group-item"><strong>Opłata karna:</strong> @debt.PenaltyFee zł</li>
+                    <li class="list-group-item"><strong>Dni opóźnienia:</strong> @debt.DelayDays</li>
+                    <li class="list-group-item"><strong>Data zwrotu:</strong> @debt.AuthorFirstName</li>
+                </ul>
+            </div>
+        </div>
+    }
+}
 
-<td>
-    <a class="btn btn-primary" href="/SalesOrder/Index/@Model.ClientId" onclick="buyBook(@Model.ClientId)">Kup książkę</a>
-</td>
-
-<td>
-    <a class="btn btn-primary" href="/Rental/Index/@Model.ClientId" onclick="rentBook(@Model.ClientId)">Wypożycz książkę</a>
-</td>
+<div>
+    <a class="btn btn-primary" href="/SalesOrder/Index/@Model.Client.ClientId" onclick="buyBook(@Model.Client.ClientId)">Kup książkę</a>
+    <a class="btn btn-primary" href="/Rental/Index/@Model.Client.ClientId" onclick="rentBook(@Model.Client.ClientId)">Wypożycz książkę</a>
+</div>
 
 @section Scripts {
     <script>
