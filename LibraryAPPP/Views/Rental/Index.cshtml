@@ -47,10 +47,7 @@
             <td>@book.Price</td>
             <td>@book.Quantity</td>
             <td>
-                <a class="btn btn-success" href="/SalesOrder/BuyBook/@book.ClientId/@book.BookId" onclick="buyBook(@book.BookId, @book.ClientId)">Kup</a>
-            </td>
-            <td>
-                <a class="btn btn-success" href="/SalesOrder/OrderBook/@book.ClientId/@book.BookId" onclick="orderBook(@book.BookId, @book.ClientId)">Zamów</a>
+                <a class="btn btn-success" href="/Rental/RentBook/@book.ClientId/@book.BookId" onclick="rentBook(@book.BookId, @book.ClientId)">Wypożycz</a>
             </td>
         </tr>
     }
@@ -64,11 +61,7 @@
         }
 
         function buyBook(bookId, clientId) {
-            window.location.href = $"/SalesOrder/BuyBook/" + clientId + "/" + bookId;
-        }
-        
-        function orderBook(bookId, clientId) {
-            window.location.href = "/SalesOrder/orderBook/" + clientId + "/" + bookId;
+            window.location.href = $"/Rental/RentBook/" + clientId + "/" + bookId;
         }
     </script>
 }

@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\RentRepository\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LibraryAPPP.DB\LibraryAPPP.DB.csproj" />
   </ItemGroup>
 

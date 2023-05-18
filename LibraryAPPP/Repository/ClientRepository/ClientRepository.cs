@@ -19,5 +19,10 @@ namespace LibraryAPPP.Repository.UserRepository
         {
             return _context.Clients.FirstOrDefault(x => x.ClientId == ClientId);
         }
+
+        public bool IsBlocked(int clientId)
+        {
+            return _context.Clients.FirstOrDefault(x => x.ClientId == clientId).Blocked;
+        }
     }
 }

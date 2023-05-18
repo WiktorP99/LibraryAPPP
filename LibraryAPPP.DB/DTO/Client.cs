@@ -21,6 +21,7 @@ namespace LibraryAPPP.DB.DTO
         public string City { get; set; }
         public string PostalCode { get; set; }
         public string Address { get; set; }
+        public bool Blocked { get; set; }
 
         public virtual ICollection<RentHeader> RentHeaders { get; set; }
         public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }

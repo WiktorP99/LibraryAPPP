@@ -21,7 +21,7 @@ namespace LibraryAPPP.Repository.LibraryRepository
         {
             _context = context;
         }
-        public List<BookViewModel> GetAllBooks()
+        public List<BookViewModel> GetAllBooks(int? clientId = 0)
         {
             var books = _context.Books.Include(x => x.Author).ToList();
             List<BookViewModel> resultList = new List<BookViewModel>();
@@ -30,6 +30,7 @@ namespace LibraryAPPP.Repository.LibraryRepository
             {
                 var bookViewModel = new BookViewModel
                 {
+                    ClientId =clientId,
                     BookId = book.BookId,
                     AuthorFirstName = book.Author.AuthorFirstName,
                     AuthorLastName = book.Author.AuthorLastName,

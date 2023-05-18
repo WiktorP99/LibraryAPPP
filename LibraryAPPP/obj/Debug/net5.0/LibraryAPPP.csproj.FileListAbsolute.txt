@@ -441,3 +441,4 @@ D:\HOBBY\LibraryAPPP\LibraryAPPP\bin\Debug\net5.0\AutoMapper.dll
 D:\HOBBY\LibraryAPPP\LibraryAPPP\obj\Debug\net5.0\Razor\Views\Books\AddBookView.cshtml.g.cs
 D:\HOBBY\LibraryAPPP\LibraryAPPP\obj\Debug\net5.0\Razor\Views\Books\BooksView.cshtml.g.cs
 D:\HOBBY\LibraryAPPP\LibraryAPPP\obj\Debug\net5.0\Razor\Views\SalesOrder\Index.cshtml.g.cs
+D:\HOBBY\LibraryAPPP\LibraryAPPP\obj\Debug\net5.0\Razor\Views\Rental\Index.cshtml.g.cs

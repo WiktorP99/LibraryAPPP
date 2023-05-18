@@ -19,8 +19,7 @@ namespace LibraryAPPP.Controllers
         public IActionResult GetBooks()
         {
             List<BookViewModel> list = new List<BookViewModel>();
-            list = _libraryRepository.GetAllBooks();
-
+            list = _libraryRepository.GetAllBooks(null);
             return View("BooksView", list);
         }
 

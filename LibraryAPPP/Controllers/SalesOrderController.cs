@@ -16,7 +16,6 @@ namespace LibraryAPPP.Controllers
             _salesOrderRepository = salesOrderRepository;
         }
 
-        // GET
         [HttpGet]
         [Route("[Controller]/Index/{clientId}")]
         public IActionResult Index(int clientId)
