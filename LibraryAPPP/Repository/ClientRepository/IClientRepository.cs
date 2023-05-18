@@ -1,4 +1,5 @@
-﻿using LibraryAPPP.DB.DTO;
+﻿using System.Collections.Generic;
+using LibraryAPPP.DB.DTO;
 using LibraryAPPP.Models;
 using LibraryAPPP.Models.ViewModels;
 
@@ -8,5 +9,6 @@ namespace LibraryAPPP.Repository.UserRepository
     {
         public ClientDebtInfoViewModel GetClientById(int clientId);
         public bool IsBlocked(int clientId);
+        List<Client> GetAllClients();
     }
 }

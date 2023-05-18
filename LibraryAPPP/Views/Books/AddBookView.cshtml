@@ -19,7 +19,7 @@
     
     <div>
         <label for="PublicationDate">Data publikacji:</label>
-        @Html.TextBoxFor(m => m.PublicationDate, new { type = "date" })
+        @Html.TextBoxFor(m => m.PublicationDate.ToString("yyyy-MM-dd"), new { type = "date" })
     </div>
     
     <div>

@@ -80,10 +80,7 @@ namespace LibraryAPPP.Repository.LibraryRepository
             }
         }
 
-        public List<Client> GetAllClients()
-        {
-            return _context.Clients.ToList();
-        }
+
 
         public void AddBook(BookViewModel model)
         {

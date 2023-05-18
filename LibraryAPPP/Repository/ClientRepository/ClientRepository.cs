@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using LibraryAPPP.DB.DTO;
 using LibraryAPPP.Enums;
 using LibraryAPPP.Models;
@@ -43,7 +44,10 @@ namespace LibraryAPPP.Repository.UserRepository
 
             return clientInfo;
         }
-
+        public List<Client> GetAllClients()
+        {
+            return _context.Clients.ToList();
+        }
         public bool IsBlocked(int clientId)
         {
             return _context.Clients.FirstOrDefault(x => x.ClientId == clientId).Blocked;

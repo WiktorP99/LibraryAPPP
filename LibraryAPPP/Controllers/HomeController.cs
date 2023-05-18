@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LibraryAPPP.Models.ViewModels;
 using LibraryAPPP.Repository.LibraryRepository;
+using LibraryAPPP.Repository.UserRepository;
 using Microsoft.Extensions.Configuration;
 
 namespace LibraryAPPP.Controllers
@@ -15,16 +16,16 @@ namespace LibraryAPPP.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ILibraryRepository _libraryRepository;
-        public HomeController(ILogger<HomeController> logger, ILibraryRepository libraryRepository)
+        private readonly IClientRepository _clientRepository;
+        public HomeController(ILogger<HomeController> logger, IClientRepository clientRepository)
         {
-            _libraryRepository = libraryRepository;
+            _clientRepository = clientRepository;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View(_libraryRepository.GetAllClients());
+            return View(_clientRepository.GetAllClients());
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
