@@ -1,5 +1,6 @@
 using LibraryAPPP.DB.DTO;
 using LibraryAPPP.Repository.LibraryRepository;
+using LibraryAPPP.Repository.SalesOrderRepository;
 using LibraryAPPP.Repository.UserRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +31,7 @@ namespace LibraryAPPP
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddScoped<ILibraryRepository, LibraryRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<ISalesOrderRepository, SalesOrderRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

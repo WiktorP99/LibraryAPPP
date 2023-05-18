@@ -9,6 +9,8 @@ namespace LibraryAPPP.Repository.LibraryRepository
     {
         List<BookViewModel> GetAllBooks();
         List<Client> GetAllClients();
+        List<BookViewModel> GetAllBooksToBuy(int clientId);
+        public Book? GetBookById(int bookId);
         void AddBook(BookViewModel model);
 
     }

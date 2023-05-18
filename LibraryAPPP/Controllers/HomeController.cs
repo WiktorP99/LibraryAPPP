@@ -26,49 +26,6 @@ namespace LibraryAPPP.Controllers
         {
             return View(_libraryRepository.GetAllClients());
         }
-
-        public IActionResult GetBooks()
-        {
-            List<BookViewModel> list = new List<BookViewModel>();
-            list = _libraryRepository.GetAllBooks();
-
-            return View("BooksView", list);
-        }
-
-        [Route("[Controller]/AddBook")]
-        public ActionResult AddBook(BookViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                BookViewModel newBook = new BookViewModel
-                {
-                    AuthorFirstName = model.AuthorFirstName,
-                    AuthorLastName = model.AuthorLastName,
-                    Title = model.Title,
-                    PublicationDate = model.PublicationDate,
-                    Price = model.Price,
-                    Quantity = model.Quantity
-                };
-                if (newBook.AuthorFirstName != null && newBook.AuthorLastName != null && newBook.Title != null)
-                {
-                    _libraryRepository.AddBook(newBook);
-                    return RedirectToAction("BookAdded");
-                }
-                else
-                {
-                    return RedirectToAction("BookAdded");
-                }
-
-            }
-            return View("Index", model);
-        }
-
-        public ActionResult BookAdded()
-        {
-            return View("AddBookView");
-        }
-
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

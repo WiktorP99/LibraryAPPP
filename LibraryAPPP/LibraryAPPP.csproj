@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\SalesOrderRepository\" />
     <Folder Include="Repository\RentRepository\" />
   </ItemGroup>
 

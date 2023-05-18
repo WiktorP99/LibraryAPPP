@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryAPPP", "LibraryAPPP\LibraryAPPP.csproj", "{851234AB-840C-4730-9DA4-7D71BB5BEAFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryAPPP.DB", "LibraryAPPP.DB\LibraryAPPP.DB.csproj", "{835662F8-C181-49A9-BFC3-CA0EAB9A3623}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryAPPP.DB", "LibraryAPPP.DB\LibraryAPPP.DB.csproj", "{835662F8-C181-49A9-BFC3-CA0EAB9A3623}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

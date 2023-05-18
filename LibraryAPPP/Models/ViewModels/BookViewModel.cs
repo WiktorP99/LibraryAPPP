@@ -4,6 +4,8 @@ namespace LibraryAPPP.Models.ViewModels
 {
     public class BookViewModel 
     {
+        public int? ClientId { get; set; }
+        public int BookId { get; set; }
         public string AuthorFirstName { get; set; }
         public string AuthorLastName { get; set; }
         public string Title { get; set; }

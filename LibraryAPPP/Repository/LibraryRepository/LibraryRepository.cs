@@ -30,6 +30,7 @@ namespace LibraryAPPP.Repository.LibraryRepository
             {
                 var bookViewModel = new BookViewModel
                 {
+                    BookId = book.BookId,
                     AuthorFirstName = book.Author.AuthorFirstName,
                     AuthorLastName = book.Author.AuthorLastName,
                     Title = book.Title,
@@ -41,6 +42,41 @@ namespace LibraryAPPP.Repository.LibraryRepository
             }
 
             return resultList;
+        }
+
+        public List<BookViewModel> GetAllBooksToBuy(int clientId)
+        {
+            var books = _context.Books.Include(x => x.Author).ToList();
+            List<BookViewModel> resultList = new List<BookViewModel>();
+
+            foreach (var book in books)
+            {
+                var bookViewModel = new BookViewModel
+                {
+                    ClientId = clientId,
+                    BookId = book.BookId,
+                    AuthorFirstName = book.Author.AuthorFirstName,
+                    AuthorLastName = book.Author.AuthorLastName,
+                    Title = book.Title,
+                    PublicationDate = book.PublicationDate.GetValueOrDefault(),
+                    Price = book.Price,
+                    Quantity = book.Quantity
+                };
+                resultList.Add(bookViewModel);
+            }
+            return resultList.Where(x => x.Price != null).ToList();
+        }
+
+        public Book GetBookById(int bookId)
+        {
+            try
+            {
+                return _context.Books.FirstOrDefault(x => x.BookId == bookId && x.Quantity > 0);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public List<Client> GetAllClients()

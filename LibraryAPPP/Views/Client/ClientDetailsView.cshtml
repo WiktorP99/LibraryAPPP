@@ -23,10 +23,26 @@
     </div>
 </div>
 
+<td>
+    <a class="btn btn-primary" href="/SalesOrder/Index/@Model.ClientId" onclick="buyBook(@Model.ClientId)">Kup książkę</a>
+</td>
+
+<td>
+    <a class="btn btn-primary" href="/Rental/Index/@Model.ClientId" onclick="rentBook(@Model.ClientId)">Wypożycz książkę</a>
+</td>
+
 @section Scripts {
     <script>
         function goBack() {
             window.location.href = "/";
+        }
+        
+        function buyBook(bookId) {
+            window.location.href = "/SalesOrder/Index/" + bookId;
+        }
+        
+        function rentBook(bookId) {
+            window.location.href = "/Rental/Index/" + bookId;
         }
     </script>
 }
