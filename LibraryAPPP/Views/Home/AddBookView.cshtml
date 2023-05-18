@@ -1,0 +1,36 @@
+﻿@model LibraryAPPP.Models.ViewModels.BookViewModel
+
+@using (Html.BeginForm("AddBook", "Home", FormMethod.Post))
+{
+    <div>
+        <label for="AuthorFirstName">Imię autora:</label>
+        @Html.TextBoxFor(m => m.AuthorFirstName)
+    </div>
+    
+    <div>
+        <label for="AuthorLastName">Nazwisko authora:</label>
+        @Html.TextBoxFor(m => m.AuthorLastName)
+    </div>
+    
+    <div>
+        <label for="Title">Tytuł książki:</label>
+        @Html.TextBoxFor(m => m.Title)
+    </div>
+    
+    <div>
+        <label for="PublicationDate">Data publikacji:</label>
+        @Html.TextBoxFor(m => m.PublicationDate, new { type = "date" })
+    </div>
+    
+    <div>
+        <label for="Price">Cena:</label>
+        @Html.TextBoxFor(m => m.Price)
+    </div>
+    
+    <div>
+        <label for="Quantity">Ilość:</label>
+        @Html.TextBoxFor(m => m.Quantity)
+    </div>
+    
+    <input type="submit" value="Dodaj książkę" />
+}

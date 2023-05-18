@@ -1,0 +1,15 @@
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\bin\Debug\net5.0\LibraryAPPP.DB.deps.json
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\bin\Debug\net5.0\LibraryAPPP.DB.dll
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\bin\Debug\net5.0\ref\LibraryAPPP.DB.dll
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\bin\Debug\net5.0\LibraryAPPP.DB.pdb
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.csproj.AssemblyReference.cache
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.GeneratedMSBuildEditorConfig.editorconfig
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.AssemblyInfoInputs.cache
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.AssemblyInfo.cs
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.csproj.CoreCompileInputs.cache
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.dll
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\ref\LibraryAPPP.DB.dll
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.pdb
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\bin\Debug\net5.0\LibraryAPPP.DB.runtimeconfig.json
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\bin\Debug\net5.0\LibraryAPPP.DB.runtimeconfig.dev.json
+D:\HOBBY\LibraryAPPP\LibraryAPPP.DB\obj\Debug\net5.0\LibraryAPPP.DB.genruntimeconfig.cache

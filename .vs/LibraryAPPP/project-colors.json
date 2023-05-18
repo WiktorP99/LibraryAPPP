@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "99ddf85f-1fe9-4c88-89b3-4cb90025410b": {
+      "ProjectGuid": "99ddf85f-1fe9-4c88-89b3-4cb90025410b",
+      "DisplayName": "LibraryAPPP",
+      "ColorIndex": 0
+    },
+    "851234ab-840c-4730-9da4-7d71bb5beafa": {
+      "ProjectGuid": "851234ab-840c-4730-9da4-7d71bb5beafa",
+      "DisplayName": "LibraryAPPP",
+      "ColorIndex": 1
+    },
+    "835662f8-c181-49a9-bfc3-ca0eab9a3623": {
+      "ProjectGuid": "835662f8-c181-49a9-bfc3-ca0eab9a3623",
+      "DisplayName": "LibraryAPPP.DB",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

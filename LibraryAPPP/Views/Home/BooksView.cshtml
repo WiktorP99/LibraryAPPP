@@ -1,0 +1,69 @@
+﻿@model List<LibraryAPPP.Models.ViewModels.BookViewModel>
+
+@{
+    var books = @Model;
+    var searchQuery = Context.Request.Query["searchQuery"].ToString();
+    var filteredBooks = string.IsNullOrWhiteSpace(searchQuery)
+        ? books
+        : books.Where(book =>
+            book.Title.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            book.AuthorFirstName.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            book.AuthorLastName.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)
+            ).ToList();
+}
+
+<div class="d-flex justify-content-between align-items-center">
+    <button class="btn btn-primary mb-3" onclick="goBack()">Powrót</button>
+</div>
+<br/>
+<div>
+    <h3 class="m-0">Książki</h3>
+    <a class="btn btn-primary" href="/Home/AddBook/">Dodaj książkę</a>
+</div>
+<br/>
+<form method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="searchQuery" placeholder="Wyszukaj książkę..." value="@searchQuery" />
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Szukaj</button>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Imię autora</th>
+        <th>Nazwisko autora</th>
+        <th>Tytuł</th>
+        <th>Data publikacji</th>
+        <th>Cena</th>
+        <th>Ilość</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in filteredBooks)
+    {
+        <tr>
+            <td>@book.AuthorFirstName</td>
+            <td>@book.AuthorLastName</td>
+            <td>@book.Title</td>
+            <td>@book.PublicationDate</td>
+            <td>@book.Price</td>
+            <td>@book.Quantity</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        function goBack() {
+            window.location.href = "/";
+        }
+        
+        function addBook() {
+            window.location.href = "";
+        }
+    </script>
+}

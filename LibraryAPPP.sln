@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryAPPP", "LibraryAPPP\LibraryAPPP.csproj", "{851234AB-840C-4730-9DA4-7D71BB5BEAFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryAPPP.DB", "LibraryAPPP.DB\LibraryAPPP.DB.csproj", "{835662F8-C181-49A9-BFC3-CA0EAB9A3623}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{851234AB-840C-4730-9DA4-7D71BB5BEAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851234AB-840C-4730-9DA4-7D71BB5BEAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851234AB-840C-4730-9DA4-7D71BB5BEAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851234AB-840C-4730-9DA4-7D71BB5BEAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{835662F8-C181-49A9-BFC3-CA0EAB9A3623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{835662F8-C181-49A9-BFC3-CA0EAB9A3623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{835662F8-C181-49A9-BFC3-CA0EAB9A3623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{835662F8-C181-49A9-BFC3-CA0EAB9A3623}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE8B75D0-A099-4368-A2F0-8A7EEED6F34F}
+	EndGlobalSection
+EndGlobal

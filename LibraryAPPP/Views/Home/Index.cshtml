@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<LibraryAPPP.DB.DTO.Client>
+
+@{
+    var clients = @Model;
+    var searchQuery = Context.Request.Query["searchQuery"].ToString();
+    var filteredClients = string.IsNullOrWhiteSpace(searchQuery)
+        ? clients
+        : clients.Where(client =>
+            client.ClientFirstName.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            client.ClientLastName.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            client.Email.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            client.Province.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            client.City.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            client.PostalCode.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            client.Address.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)
+        ).ToList();
+}
+
+<h3>Klienci</h3>
+
+<form method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="searchQuery" placeholder="Wyszukaj klienta..." value="@searchQuery" />
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Szukaj</button>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Identyfikator klienta</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+            <th>Województwo</th>
+            <th>Miasto</th>
+            <th>Kod pocztowy</th>
+            <th>Adres</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in filteredClients)
+        {
+            <tr>
+                <td>@client.ClientId</td>
+                <td>@client.ClientFirstName</td>
+                <td>@client.ClientLastName</td>
+                <td>@client.Email</td>
+                <td>@client.Province</td>
+                <td>@client.City</td>
+                <td>@client.PostalCode</td>
+                <td>@client.Address</td>
+                <td>
+                    <a class="btn btn-primary" href="/Client/Details/@client.ClientId">Szczegóły</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

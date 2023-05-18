@@ -1,0 +1,32 @@
+﻿@model LibraryAPPP.DB.DTO.Client
+
+<div class="d-flex justify-content-between align-items-center">
+    <button class="btn btn-primary mb-3" onclick="goBack()">Powrót</button>
+</div>
+<br/>
+<div>
+    <h3 class="m-0">Informacje o kliencie</h3>
+</div>
+<br/>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.ClientFirstName @Model.ClientLastName</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Identyfikator klienta:</strong> @Model.ClientId</li>
+            <li class="list-group-item"><strong>Email:</strong> @Model.Email</li>
+            <li class="list-group-item"><strong>Adres:</strong> @Model.Address</li>
+            <li class="list-group-item"><strong>Miasto:</strong> @Model.City</li>
+            <li class="list-group-item"><strong>Województwo:</strong> @Model.Province</li>
+            <li class="list-group-item"><strong>Kod pocztowy:</strong> @Model.PostalCode</li>
+        </ul>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function goBack() {
+            window.location.href = "/";
+        }
+    </script>
+}
