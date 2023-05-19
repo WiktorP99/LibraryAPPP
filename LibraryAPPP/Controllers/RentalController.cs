@@ -28,7 +28,7 @@ namespace LibraryAPPP.Controllers
         public IActionResult RentBook(int clientId, int bookId)
         {
             _rentRepository.RentBook(bookId, clientId);
-            return View("Index", _libraryRepository.GetAllBooksToBuy(clientId));
+            return View("Index", _libraryRepository.GetAllBooks(clientId));
         }
     }
 }
